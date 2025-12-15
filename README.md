@@ -23,10 +23,8 @@ cd email-refiner-agent
 uv sync
 
 # Run the chosen agent
-uv run python main.py
-
-# For notebook-based agents (email-refiner-agent)
-# uv run jupyter notebook
+adk web
+adk api_server
 ```
 
 Set required API keys in your environment (e.g., `OPENAI_API_KEY` for LLM access, `FIRECRAWL_API_KEY` for financial-analyst web search) before running agents.
