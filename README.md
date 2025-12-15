@@ -15,7 +15,7 @@ Collection of AI agent projects built with Google ADK (Agent Development Kit) de
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/davidKMJ/google-adk-basics.git
 cd google-adk-basics
 
 # Choose a subproject and install dependencies (example: email-refiner-agent)
