@@ -1,0 +1,22 @@
+[project]
+name = "email-refiner-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "cloudpickle>=3.1.2",
+    "google-adk>=1.21.0",
+    "google-cloud-aiplatform[adk,agent-engines]>=1.130.0",
+    "google-genai>=1.55.0",
+    "greenlet>=3.3.0",
+    "litellm>=1.80.9",
+    "requests>=2.32.5",
+    "sseclient-py>=1.8.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+]

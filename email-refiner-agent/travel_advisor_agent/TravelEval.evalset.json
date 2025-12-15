@@ -1,0 +1,199 @@
+{
+  "eval_set_id": "TravelEval",
+  "name": "TravelEval",
+  "eval_cases": [
+    {
+      "eval_id": "Tokyo_Aug",
+      "conversation": [
+        {
+          "invocation_id": "e-99c5cc50-d709-4e79-9b84-ab22a9aa8e8a",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hi!"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hello! How can I assist you with your travel plans today?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1765506014.48936
+        },
+        {
+          "invocation_id": "e-70b93718-ffb7-4d49-84e1-f5e0875902d1",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I want to go to Tokyo."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "That sounds exciting! Tokyo is a vibrant city with a mix of traditional and modern attractions. To help you plan your trip, I can provide you with current weather information, popular attractions to visit, and currency exchange rates if needed. Let me know what information you'd like to start with!"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1765506027.021739
+        },
+        {
+          "invocation_id": "e-017542c5-03b8-40c6-a4e2-966b9dd32a1b",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I need all of them."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here's some useful information for your trip to Tokyo:\n\n### Current Weather in Tokyo:\n- **Temperature:** 22°C\n- **Condition:** Partly cloudy\n- **Humidity:** 65%\n- **Wind:** 12 km/h\n- **Forecast:** Mild weather with occasional clouds expected throughout the day\n\n### Popular Attractions in Tokyo:\n1. **Tokyo Tower** - A communications and observation tower with an impressive view of the city. (Rating: 4.5)\n2. **Senso-ji** - An ancient Buddhist temple known for its historic significance. (Rating: 4.6)\n3. **Shibuya Crossing** - The busiest pedestrian crossing, famous for its bustling atmosphere. (Rating: 4.4)\n4. **Meiji Shrine** - A serene Shinto shrine dedicated to Emperor Meiji. (Rating: 4.7)\n5. **Tokyo Skytree** - A broadcasting and observation tower offering panoramic views. (Rating: 4.6)\n\n### Currency Exchange Rate:\n- **1 USD** is approximately **149.5 JPY**\n\nIf you need any more information or help with your travel plans, feel free to ask!"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "TravelAdvisorAgent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_gYpdAgU4ms8YwLoDk50kXetk",
+                        "args": {
+                          "location": "Tokyo"
+                        },
+                        "name": "get_weather"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "call_2ZJv8ra20vdy5G5DFPrUp4mC",
+                        "args": {
+                          "location": "Tokyo"
+                        },
+                        "name": "get_local_attractions"
+                      }
+                    },
+                    {
+                      "function_call": {
+                        "id": "call_nQTd8h0APjjpJtQtTN9Hhsh8",
+                        "args": {
+                          "from_currency": "USD",
+                          "to_currency": "JPY",
+                          "amount": 1
+                        },
+                        "name": "get_exchange_rate"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "TravelAdvisorAgent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_gYpdAgU4ms8YwLoDk50kXetk",
+                        "name": "get_weather",
+                        "response": {
+                          "location": "Tokyo",
+                          "temperature": "22°C",
+                          "condition": "Partly cloudy",
+                          "humidity": "65%",
+                          "wind": "12 km/h",
+                          "forecast": "Mild weather with occasional clouds expected throughout the day"
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "call_2ZJv8ra20vdy5G5DFPrUp4mC",
+                        "name": "get_local_attractions",
+                        "response": {
+                          "location": "Tokyo",
+                          "category": "all",
+                          "attractions": [
+                            {
+                              "name": "Tokyo Tower",
+                              "type": "landmark",
+                              "rating": 4.5,
+                              "description": "Communications and observation tower"
+                            },
+                            {
+                              "name": "Senso-ji",
+                              "type": "temple",
+                              "rating": 4.6,
+                              "description": "Ancient Buddhist temple"
+                            },
+                            {
+                              "name": "Shibuya Crossing",
+                              "type": "landmark",
+                              "rating": 4.4,
+                              "description": "Busiest pedestrian crossing"
+                            },
+                            {
+                              "name": "Meiji Shrine",
+                              "type": "shrine",
+                              "rating": 4.7,
+                              "description": "Shinto shrine dedicated to Emperor Meiji"
+                            },
+                            {
+                              "name": "Tokyo Skytree",
+                              "type": "tower",
+                              "rating": 4.6,
+                              "description": "Broadcasting and observation tower"
+                            }
+                          ],
+                          "total_count": 5
+                        }
+                      }
+                    },
+                    {
+                      "function_response": {
+                        "id": "call_nQTd8h0APjjpJtQtTN9Hhsh8",
+                        "name": "get_exchange_rate",
+                        "response": {
+                          "from_currency": "USD",
+                          "to_currency": "JPY",
+                          "amount": 1,
+                          "exchange_rate": 149.5,
+                          "converted_amount": 149.5,
+                          "timestamp": "2024-03-15 10:30:00 UTC"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1765506035.156689
+        }
+      ],
+      "session_input": {
+        "app_name": "travel_advisor_agent",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1765506072.603201
+    }
+  ],
+  "creation_timestamp": 1765506009.476017
+}
